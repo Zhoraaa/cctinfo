@@ -15,12 +15,18 @@ class Origin extends Model
         'name',
         'description',
         'health',
-        'food'
+        'food',
+        'average',
+        'kindness',
+        'evoltion',
     ];
 
     public $timestamps = false;
 
     public function powers() {
         return $this->hasMany(Power::class, 'origin_type', 'index');
+    }
+    public function evolutions() {
+        return $this->hasMany(Origin::class, 'evolution', 'index');
     }
 }

@@ -13,11 +13,22 @@ return new class extends Migration
     {
         Schema::create('origins', function (Blueprint $table) {
             $table->id();
-            $table->string('index')->unique();
+            $table->string('index')->unique(); // Уникальное ограничение
             $table->string('name');
             $table->text('description');
             $table->integer('health')->default(20);
             $table->string('food')->default('Всеядные');
+            $table->string('average')->nullable();
+            $table->string('kindness')->nullable();
+            $table->string('evolution')->nullable(); // nullable для внешнего ключа
+        });
+
+        Schema::table('origins', function (Blueprint $table) {
+            $table->foreign('evolution')
+                ->references('index')
+                ->on('origins')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

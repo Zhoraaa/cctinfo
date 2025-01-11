@@ -6,8 +6,25 @@ body {
     width: 10px;
 
     display: block;
-    
+
     image-rendering: pixelated;
+}
+
+.auto-width {
+    width: 75%;
+}
+.adaptive-block {
+    display: block;
+}
+
+@media only screen and (max-width: 770px) {
+    .auto-width {
+        width: 100%;
+        padding: 10px;
+    }
+    .adaptive-block {
+        display: contents;
+    }
 }
 
 .link-with-icon {

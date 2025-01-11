@@ -9,7 +9,7 @@ class OriginController extends Controller
 {
     //
     public function originsList() {
-        $origins = Origin::get()->all();
+        $origins = Origin::where('evolution', null)->get()->all();
 
         return view('races', ['origins' => $origins, 'powers']);
     }

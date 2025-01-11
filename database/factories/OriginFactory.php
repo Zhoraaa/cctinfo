@@ -24,6 +24,9 @@ class OriginFactory extends Factory
             'description' => $this->faker->text(),
             'health' => 20,
             'food' => 'Всеядные',
+            'average' => null,
+            'kindness' => null,
+            'evolution' => null
         ];
     }
 }

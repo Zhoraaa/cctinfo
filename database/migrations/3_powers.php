@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('powers', function (Blueprint $table) {
             $table->id();
             $table->string('origin_type');
-            $table->foreign('origin_type')->references('index')->on('origins');
+            $table->foreign('origin_type')
+                ->references('index')
+                ->on('origins')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('name');
             $table->text('description');
             $table->string('explain')->nullable();
