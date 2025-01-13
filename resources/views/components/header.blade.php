@@ -9,8 +9,8 @@
             <div class="navbar-nav">
                 <a class="nav-link" data-bs-toggle="offcanvas" href="#manualTOC" role="button"
                     aria-controls="manualTOC">Справочник</a>
-                <a class="nav-link" href="{{ route('about') }}">О нас</a>
-                <a class="nav-link" href="{{ route('download') }}">Лаунчер</a>
+                {{-- <a class="nav-link" href="{{ route('about') }}">О нас</a> --}}
+                {{-- <a class="nav-link" href="{{ route('download') }}">Лаунчер</a> --}}
             </div>
         </div>
         {{-- Гостевое --}}
