@@ -5,6 +5,7 @@
 @endsection
 
 @section('body')
+    <x-header></x-header>
     <div class="auto-width m-auto">
         <div class="state_label d-flex flex-wrap align-items-center justify-content-between mt-2 mb-2">
             <h1>

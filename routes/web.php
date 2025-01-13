@@ -40,12 +40,13 @@ Route::get('/resourcepack', function () {
 })->name('resourcepack'); // Ресурспак
 
 Route::get('/web-map', function () {
-    return view('web-map');
+    return redirect()->away('http://107.161.154.204:8123/');
+    // return view('web-map');
 })->name('web-map'); // Веб-карта
 
-Route::get('/achievements', function () {
-    return view('achievements');
-})->name('achievements'); // Ачивки
+Route::get('/advancements', function () {
+    return view('advancements');
+})->name('advancements'); // Ачивки
 
 Route::get('/recipes', function () {
     return view('recipes');

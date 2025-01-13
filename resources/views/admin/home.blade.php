@@ -5,6 +5,7 @@
 @endsection
 
 @section('body')
+    <x-header></x-header>
     <form action="{{ route('insertedData') }}" method="get">
         @csrf
         <textarea name="content" class="TinyMCE"></textarea>
