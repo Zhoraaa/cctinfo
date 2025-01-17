@@ -1,3 +1,8 @@
+* {
+    image-rendering: pixelated;
+    line-height: 2rem;
+}
+
 body {
     min-height: 100vh;
 }
@@ -6,8 +11,6 @@ body {
     width: 10px;
 
     display: block;
-
-    image-rendering: pixelated;
 }
 
 .auto-width {
@@ -75,6 +78,97 @@ ol > li:before {
     content: counters(li, ".") ". ";
 }
 
+/* Анимация логотипа при наведении */
 * {
-    line-height: 2rem;
+    --link-logo: 10vmin;
+}
+
+.logo-hover-interact {
+    position: relative;
+    padding: 5px;
+}
+
+.layout-img-1,
+.layout-img-2,
+.layout-img-under{
+    position: absolute;
+    width: var(--link-logo);
+    height: var(--link-logo);
+    margin: 0;
+    padding: 0;
+}
+
+.layout-img-1 > img,
+.layout-img-2 > img,
+.layout-img-under > img {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    * {
+        --link-logo: 15vmin;
+    }
+    
+}
+.layout-img-1 {
+    z-index: 2;
+}
+.layout-img-2 {
+    z-index: 2;
+}
+.layout-img-under {
+    z-index: 0;
+    transition: 0.25s;
+    opacity: 0.5;
+    filter: blur(1.5rem);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.075);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.logo-hover-interact:hover > .layout-img-1 {
+    animation: pulse 0.6s ease-out 1;
+}
+.logo-hover-interact:hover > .layout-img-2 {
+    animation: pulse 0.6s ease-out 1 200ms;
+}
+.logo-hover-interact:hover > .layout-img-under {
+    filter: blur(0.5rem);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(-5deg);
+    }
+    70% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.logo-hover-interact:hover > .layout-img-1 > img {
+    animation: rotate 0.7s ease-in-out 1;
+}
+.logo-hover-interact:hover > .layout-img-2 > img {
+    animation: rotate 0.7s ease-in-out 1 75ms;
+}
+
+/* Menu toggler */
+.menu-toggler {
+    position: fixed;
 }

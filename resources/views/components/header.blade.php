@@ -1,26 +1,16 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('home') }}">CCT</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" data-bs-toggle="offcanvas" href="#manualTOC" role="button"
-                    aria-controls="manualTOC">Справочник</a>
-                {{-- <a class="nav-link" href="{{ route('about') }}">О нас</a> --}}
-                {{-- <a class="nav-link" href="{{ route('download') }}">Лаунчер</a> --}}
-            </div>
+<div class="menu-toggler">
+    <div class="logo-hover-interact" data-bs-toggle="offcanvas" href="#manualTOC" role="button" aria-controls="manualTOC">
+        <div class="layout-img-1">
+            <img src="{{ asset('assets/img/interact/icon_layout_1.png') }}" alt="" class="">
         </div>
-        {{-- Гостевое --}}
-        @guest
-        @endguest
-        {{-- Для авторизованных --}}
-        @auth
-        @endauth
+        <div class="layout-img-2">
+            <img src="{{ asset('assets/img/interact/icon_layout_2.png') }}" alt="" class="">
+        </div>
+        <div class="layout-img-under">
+            <img src="{{ asset('assets/img/icon16.png') }}" alt="" class="">
+        </div>
     </div>
-</nav>
+</div>
 
 {{-- Всплывающий навигатор по справочнику --}}
 <div class="offcanvas offcanvas-start" tabindex="-1" id="manualTOC" aria-labelledby="manualTOC">
@@ -34,6 +24,15 @@
         <div class="section">
             {{-- Оглавление справочника --}}
             <div class="">
+                {{-- Проходка --}}
+                <a href="{{ route('prohodka') }}" target="_blank"
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                    <div class="link-with-icon fs-4 hover-border">
+                        <img class="link-icon" src="{{ asset('assets/img/badges/emerald.png') }}" alt=""
+                            class="border border-primary">
+                        <span>Попасть на сервер</span>
+                    </div>
+                </a>
                 {{-- Правила --}}
                 <a href="{{ route('rules') }}"
                     class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
@@ -62,7 +61,7 @@
                     </div>
                 </a> --}}
                 {{-- Веб-карта --}}
-                <a href="{{ route('web-map') }}"
+                <a href="{{ route('web-map') }}" target="_blank"
                     class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                     <div class="link-with-icon fs-4 hover-border">
                         <img class="link-icon" src="{{ asset('assets/img/badges/map.png') }}" alt=""

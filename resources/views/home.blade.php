@@ -18,6 +18,15 @@
             <div class="section">
                 {{-- Оглавление справочника --}}
                 <div class="">
+                    {{-- Проходка --}}
+                    <a href="{{ route('prohodka') }}" target="_blank"
+                        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                        <div class="link-with-icon fs-4 hover-border">
+                            <img class="link-icon" src="{{ asset('assets/img/badges/emerald.png') }}" alt=""
+                                class="border border-primary">
+                            <span>Попасть на сервер</span>
+                        </div>
+                    </a>
                     {{-- Правила --}}
                     <a href="{{ route('rules') }}"
                         class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
@@ -46,7 +55,7 @@
                         </div>
                     </a> --}}
                     {{-- Веб-карта --}}
-                    <a href="{{ route('web-map') }}"
+                    <a href="{{ route('web-map') }}" target="_blank"
                         class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
                         <div class="link-with-icon fs-4 hover-border">
                             <img class="link-icon" src="{{ asset('assets/img/badges/map.png') }}" alt=""

@@ -7,6 +7,9 @@ use App\Http\Controllers\TestController;
 
 // Тестовые руты
 Route::get('/insertedData', [TestController::class, 'insertedData'])->name('insertedData');
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
 
 // Главная
 Route::get('/', function () {
@@ -23,10 +26,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-// Админка
-Route::get('/admin', function () {
-    return view('admin/home');
-})->name('admin');
+Route::get('/prohodka', function () {
+    return redirect()->away('https://boosty.to/cacuti');
+})->name('prohodka'); // Проходка
 
 // Cправочник
 Route::get('/races', [OriginController::class, 'originsList'])->name('races'); // Расы
