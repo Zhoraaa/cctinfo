@@ -12,7 +12,6 @@
 </head>
 
 <body data-bs-theme="dark">
-    <nav style="position: relative; height 200px; width 100%"></nav>
 
     @yield('body')
 

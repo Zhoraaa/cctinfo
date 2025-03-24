@@ -90,7 +90,7 @@ ol > li:before {
 
 .layout-img-1,
 .layout-img-2,
-.layout-img-under{
+.layout-img-under {
     position: absolute;
     width: var(--link-logo);
     height: var(--link-logo);
@@ -105,12 +105,6 @@ ol > li:before {
     width: 100%;
 }
 
-@media screen and (max-width: 800px) {
-    * {
-        --link-logo: 15vmin;
-    }
-    
-}
 .layout-img-1 {
     z-index: 2;
 }
@@ -169,6 +163,31 @@ ol > li:before {
 }
 
 /* Menu toggler */
+.menu-toggler-wrapper {
+    width: 100%;
+    height: calc(var(--link-logo) / 2);
+}
 .menu-toggler {
     position: fixed;
+    padding: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    * {
+        --link-logo: 15vmin;
+    }
+
+    .menu-toggler-wrapper {
+        width: 100%;
+        height: calc(var(--link-logo) * 1);
+    }
+
+    .menu-toggler {
+        width: 0px  ;
+        padding: 0px;
+        padding-top: 10px;
+        transform: translate(calc(50vw + var(--link-logo) / -2), 0);
+        position: fixed;
+        z-index: 5;
+    }
 }
