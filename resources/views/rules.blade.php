@@ -5,7 +5,6 @@
 @endsection
 
 @section('body')
-    <x-header></x-header>
     <div class="auto-width m-auto pt-4">
         {{-- Надо всунуть это в БД --}}
         <h4 class="text-center">ОФИЦИАЛЬНЫЙ СВОД ПРАВИЛ #CCT.</h4>

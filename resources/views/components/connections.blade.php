@@ -11,3 +11,5 @@
 {{-- TinyMCE --}}
 <script src="https://cdn.tiny.cloud/1/uig2iyio5vvat8bnvd2319qa49zs1kp1ktl25x3q5u1l5og8/tinymce/7/tinymce.min.js"
     referrerpolicy="origin"></script>
+{{-- Axios --}}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

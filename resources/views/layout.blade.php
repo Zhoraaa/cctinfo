@@ -13,6 +13,8 @@
 
 <body data-bs-theme="dark">
 
+    <x-header></x-header>
+    
     @yield('body')
 
     <x-scripts></x-scripts>

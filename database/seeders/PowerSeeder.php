@@ -46,7 +46,6 @@ class PowerSeeder extends Seeder
             'origin_type' => 'Fireborn',
             'name' => 'Пламенная душа',
             'description' => 'Огонь не причиняет вам вреда. Будучи вашим отцом он не станет вам вредить. ',
-
         ]);
         Power::factory()->create([
             'origin_type' => 'Fireborn',
@@ -64,7 +63,6 @@ class PowerSeeder extends Seeder
             'origin_type' => 'Fireborn',
             'name' => 'Водный баланс',
             'description' => 'В обмен на жизнь под покровительством Священного Пламени, огнерожднные вынуждены опасаться воды. Жидкость при соприкосновении с ними вскипает, остужая их пламенные тела и души. ',
-
         ]);
         // Эндерианцы
         Power::factory()->create([
@@ -220,6 +218,28 @@ class PowerSeeder extends Seeder
             'origin_type' => 'Slime',
             'name' => 'Сила в целостности',
             'description' => 'Если у вас слишком мало здоровья, ваши удары перестают причинять урон, а только отталкивают.',
+        ]);
+        // Магма-куб
+        Power::factory()->create([
+            'origin_type' => 'Magmacube',
+            'name' => 'Родство с пламенем',
+            'description' => 'Огонь не причиняет вам вреда. Вы же буквально состоите из лавы!',
+        ]);
+        Power::factory()->create([
+            'origin_type' => 'Magmacube',
+            'name' => 'Сила упругости',
+            'description' => 'Ваше упругое тело не даёт вам разбиться, как бы вы не старались, а также вы отскакиваете при падении.',
+            'explain' => 'Нажмите Shift чтобы прекратить постоянно отскакивать.'
+        ]);
+        Power::factory()->create([
+            'origin_type' => 'Magmacube',
+            'name' => 'Сила в температуре',
+            'description' => 'Если у вас слишком мало здоровья, ваши удары перестают причинять урон, а только отталкивают.',
+        ]);
+        Power::factory()->create([
+            'origin_type' => 'Magmacube',
+            'name' => 'Перепады температур',
+            'description' => 'Снежки, зелья, да и просто вода убивает вас. Вы резко остываете!',
         ]);
         // Снежный голем (Клан Сноу)
         Power::factory()->create([

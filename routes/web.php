@@ -32,6 +32,7 @@ Route::get('/prohodka', function () {
 
 // Cправочник
 Route::get('/races', [OriginController::class, 'originsList'])->name('races'); // Расы
+Route::get('/racesAPI', [OriginController::class, 'originsListAPI'])->name('racesAPI'); // Расы эндпоинт
 
 Route::get('/rules', function () {
     return view('rules');

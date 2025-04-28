@@ -9,89 +9,64 @@
 @endsection
 
 @section('body')
-    <div class="absolute center">
-        <div class="selector-panel d-flex flex-column">
-            <div class="m-auto">
-                <img src="{{ asset('assets/img/logo2k.png') }}" alt="" class="relative center title-logo m-3">
-            </div>
-            {{-- Навигатор по справочнику --}}
-            <div class="section">
-                {{-- Оглавление справочника --}}
-                <div class="">
-                    {{-- Проходка --}}
-                    <a href="{{ route('prohodka') }}" target="_blank"
-                        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                        <div class="link-with-icon fs-4 hover-border">
-                            <img class="link-icon" src="{{ asset('assets/img/badges/emerald.png') }}" alt=""
-                                class="border border-primary">
-                            <span>Попасть на сервер</span>
-                        </div>
-                    </a>
-                    {{-- Правила --}}
-                    <a href="{{ route('rules') }}"
-                        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                        <div class="link-with-icon fs-4 hover-border">
-                            <img class="link-icon" src="{{ asset('assets/img/badges/banner_pattern.png') }}" alt=""
-                                class="border border-primary">
-                            <span>Правила</span>
-                        </div>
-                    </a>
-                    {{-- Расы --}}
-                    <a href="{{ route('races') }}"
-                        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                        <div class="link-with-icon fs-4 hover-border">
-                            <img class="link-icon" src="{{ asset('assets/img/badges/orb_of_origin.png') }}" alt=""
-                                class="border border-primary">
-                            <span>Расы</span>
-                        </div>
-                    </a>
-                    {{-- Ресурспак --}}
-                    {{-- <a href="{{ route('resourcepack') }}"
-                        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                        <div class="link-with-icon fs-4 hover-border">
-                            <img class="link-icon" src="{{ asset('assets/img/badges/brush.png') }}" alt=""
-                                class="border border-primary">
-                            <span>Ресурспак</span>
-                        </div>
-                    </a> --}}
-                    {{-- Веб-карта --}}
-                    <a href="{{ route('web-map') }}" target="_blank"
-                        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                        <div class="link-with-icon fs-4 hover-border">
-                            <img class="link-icon" src="{{ asset('assets/img/badges/map.png') }}" alt=""
-                                class="border border-primary">
-                            <span>Веб-карта</span>
-                        </div>
-                    </a>
-                    {{-- Достижения --}}
-                    {{-- <a href="{{ route('advancements') }}"
-                        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                        <div class="link-with-icon fs-4 hover-border">
-                            <img class="link-icon" src="{{ asset('assets/img/badges/nether_star.png') }}" alt=""
-                                class="border border-primary">
-                            <span>Достижения</span>
-                        </div>
-                    </a> --}}
-                    {{-- Рецепты --}}
-                    {{-- <a href="{{ route('recipes') }}"
-                        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                        <div class="link-with-icon fs-4 hover-border">
-                            <img class="link-icon" src="{{ asset('assets/img/badges/knowledge_book.png') }}" alt=""
-                                class="border border-primary">
-                            <span>Рецепты</span>
-                        </div>
-                    </a> --}}
-                    {{-- Лаунчер --}}
-                    {{-- <a href="{{ route('download') }}"
-                        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                        <div class="link-with-icon fs-4 hover-border">
-                            <img class="link-icon" src="{{ asset('assets/img/badges/icon16.png') }}" alt=""
-                                class="border border-primary">
-                            <span>Лаунчер</span>
-                        </div>
-                    </a> --}}
-                </div>
+    {{-- Постеры сезона --}}
+    <div id="poster-block">
+        <div class="poster-block">
+            <div class="poster-wrapper">
+                <img class="poster w-100" src="{{ asset('assets/img/background.png') }}" alt="">
             </div>
         </div>
+        {{-- Логотип сезона --}}
+        <div class="title-logo-wrapper">
+            <img src="{{ asset('assets/img/logo2k.png') }}" alt="" class="title-logo">
+        </div>
+    </div>
+    <div class="shadow"></div>
+    {{-- Промо сезона --}}
+    <div id="seasonDescription" class="teaser-text m-auto w-75 adaptive-block text-center">
+        <h3>
+            Эксперименты начинаются сегодня!
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna
+            accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur. Quod idem licet transferre in
+            voluptatem, ut postea variari voluptas distinguique possit, augeri amplificarique non possit. At etiam Athenis,
+            ut e patre.
+        </p>
+    </div>
+    {{-- Концепция сервера --}}
+    <div id="serverDescription" class="m-auto w-75 adaptive-block text-center">
+        <h3>
+            Добро пожаловать в ваш мир!
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna
+            accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur. Quod idem licet transferre in
+            voluptatem, ut postea variari voluptas distinguique possit, augeri amplificarique non possit. At etiam Athenis,
+            ut e patre audiebam facete et urbane Stoicos irridente, statua est in quo a nobis philosophia defensa et.
+        </p>
+    </div>
+    {{-- Доска почёта --}}
+    <div id="ourStars" class="m-auto w-75 adaptive-block text-center">
+        <h3>
+            Наши звёздочки
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
+        </p>
+    </div>
+    {{-- Наша команда --}}
+    <div id="weAre" class="m-auto w-75 adaptive-block text-center">
+        <h3>
+            Команда разработки
+        </h3>
+        <p>
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
+        </p>
     </div>
 @endsection
