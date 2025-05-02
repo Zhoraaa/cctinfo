@@ -5,19 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Power extends Model
+class OriginTag extends Model
 {
     //
     use HasFactory;
 
     protected $fillable = [
-        'origin_type',
-        'name',
-        'description',
-        'explain'
+        'index',
+        'name'
     ];
 
-    protected $hidden = ['id', 'origin_type'];
+    protected $hidden = ['id'];
 
     public $timestamps = false;
 }

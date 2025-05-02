@@ -7,3 +7,4 @@
         content_css: "dark"
     });
 </script>
+<script src="{{ asset('assets/scripts/loading.js') }}"></script>

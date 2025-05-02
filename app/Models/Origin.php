@@ -17,16 +17,28 @@ class Origin extends Model
         'health',
         'food',
         'average',
-        'kindness',
-        'evoltion',
+        'adulting',
+        'evolution',
     ];
+
+    protected $hidden = ['id'];
 
     public $timestamps = false;
 
-    public function powers() {
+    public function powers()
+    {
         return $this->hasMany(Power::class, 'origin_type', 'index');
     }
-    public function evolutions() {
-        return $this->hasMany(Origin::class, 'evolution', 'index');
+    public function evolutions()
+    {
+        return $this->hasMany(Origin::class, 'parent', 'index');
+    }
+
+    public function getFullDataAttribute()
+    {
+        return $this->loadMissing([
+            'powers',
+            'evolutions.powers'
+        ]);
     }
 }

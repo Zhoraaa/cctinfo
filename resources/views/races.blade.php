@@ -4,8 +4,15 @@
     Расы
 @endsection
 
+@section('head')
+    <link rel="stylesheet" href="{{ asset('assets/css/race.css') }}">
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('assets/scripts/searchRace.js') }}"></script>
+@endsection
+
 @section('body')
-    
     <div class="auto-width m-auto">
         <div class="state_label d-flex flex-wrap align-items-center justify-content-between">
             <h1>
@@ -15,24 +22,27 @@
                 Последнее обновление 31.01.2024
             </i>
         </div>
-        
-        <textarea name="" id="findedData" cols="100" rows="10"></textarea>
-        <script src="{{ asset('assets/scripts/searchRacist.js') }}"></script>
 
-        <p>
-            Это - конечный список рас (происхождений) персонажей для ССТ 2.5. Возможны правки в будущем для большей ясности
-            способностей и бэкраунда каждой расы.
-        </p>
-        <p>
-            Персонаж не обязательно должен полностью соответствовать описанию расы. Если на способности какой-то расы хорошо
-            ложится ваша задумка персонажа - можете использовать её. Даже несмотря на несоответствие "канону".
-        </p>
-
-        <div class="accordion" id="accordionRaces">
-
+        <div>
             @foreach ($origins as $origin)
-            {{-- Выбор расы --}}
-            <button data-index="{{ $origin->index }}" class="btn btn-outline-primary race-selector">{{ $origin->name }}</button>
+                {{-- Выбор расы --}}
+                <button data-index="{{ $origin->index }}"
+                    class="me-1 mb-2 btn btn-outline-primary race-selector">{{ $origin->name }}</button>
             @endforeach
         </div>
-    @endsection
+
+        <div id="originTable" class="d-none">
+            <h3 id="originName"></h3>
+            <div id="originEvolutions"></div>
+            <br>
+            <div class="p-3 border border-secondary rounded-3 text-end">
+                <span>
+                    <i id="originDesc" class="origin-lore-desc"></i>
+                </span>
+            </div>
+            <br>
+            <hr>
+            <div id="originPowers"></div>
+        </div>
+    </div>
+@endsection

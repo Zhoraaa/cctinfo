@@ -27,7 +27,7 @@
         <h3>
             Эксперименты начинаются сегодня!
         </h3>
-        <p>
+        <p class="d-block w-75 adaptive-block m-auto mt-4 mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna
             accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur. Quod idem licet transferre in
@@ -40,7 +40,7 @@
         <h3>
             Добро пожаловать в ваш мир!
         </h3>
-        <p>
+        <p class="d-block w-75 adaptive-block m-auto mt-4 mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna
             accessio potest, si aliquod aeternum et infinitum impendere malum nobis opinemur. Quod idem licet transferre in
@@ -53,7 +53,7 @@
         <h3>
             Наши звёздочки
         </h3>
-        <p>
+        <p class="d-block w-75 adaptive-block m-auto mt-4 mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
         </p>
@@ -63,8 +63,7 @@
         <h3>
             Команда разработки
         </h3>
-        <p>
-
+        <p class="d-block w-75 adaptive-block m-auto mt-4 mb-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
             magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri.
         </p>

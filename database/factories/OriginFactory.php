@@ -25,8 +25,8 @@ class OriginFactory extends Factory
             'health' => 20,
             'food' => 'Всеядные',
             'average' => null,
-            'kindness' => null,
-            'evolution' => null
+            'adulting' => null,
+            'parent' => null
         ];
     }
 }

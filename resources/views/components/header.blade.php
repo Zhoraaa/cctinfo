@@ -17,7 +17,7 @@
 
     document.addEventListener('DOMContentLoaded', (event) => {
         // Вставляем в шапку название страницы
-        document.getElementById("ht-text").innerHTML = "CCT - " + document.title
+        document.getElementById("ht-text").innerHTML = document.title
 
         headerPadding()
     }) 
@@ -28,13 +28,13 @@
 <div class="menu-toggler-wrapper">
     <div class="logo-hover-interact" data-bs-toggle="offcanvas" href="#manualTOC" role="button" aria-controls="manualTOC">
         <div class="layout-img-1">
-            <img src="{{ asset('assets/img/interact/icon_layout_1.png') }}" alt="" class="">
+            <img src="{{ asset('assets/img/interact/icon_layout_1.png') }}" alt="" class="logo-img loading-animation-trigger-1">
         </div>
         <div class="layout-img-2">
-            <img src="{{ asset('assets/img/interact/icon_layout_2.png') }}" alt="" class="">
+            <img src="{{ asset('assets/img/interact/icon_layout_2.png') }}" alt="" class="logo-img loading-animation-trigger-2">
         </div>
         <div class="layout-img-under">
-            <img src="{{ asset('assets/img/icon16.png') }}" alt="" class="">
+            <img src="{{ asset('assets/img/icon16.png') }}" alt="" class="logo-img loading-animation-trigger-3">
         </div>
     </div>
     <div id="headerTitle">

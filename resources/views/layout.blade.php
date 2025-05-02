@@ -18,6 +18,7 @@
     @yield('body')
 
     <x-scripts></x-scripts>
+    @yield('scripts')
 
 </body>
 

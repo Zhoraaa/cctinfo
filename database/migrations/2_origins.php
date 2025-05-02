@@ -19,12 +19,12 @@ return new class extends Migration
             $table->integer('health')->default(20);
             $table->string('food')->default('Всеядные');
             $table->string('average')->nullable();
-            $table->string('kindness')->nullable();
-            $table->string('evolution')->nullable(); // nullable для внешнего ключа
+            $table->string('adulting')->nullable();
+            $table->string('parent')->nullable(); // nullable для внешнего ключа
         });
 
         Schema::table('origins', function (Blueprint $table) {
-            $table->foreign('evolution')
+            $table->foreign('parent')
                 ->references('index')
                 ->on('origins')
                 ->onUpdate('cascade')

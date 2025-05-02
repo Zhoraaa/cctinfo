@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 
 class OriginController extends Controller
 {
-    //
     public function originsList()
     {
-        $origins = Origin::where('evolution', null)->get(['name', 'index'])->all();
+        // Получаем только базовые расы (без эволюций) с нужными полями
+        $origins = Origin::whereNull('parent')
+            ->select(['name', 'index'])
+            ->get();
 
-        return view('races', ['origins' => $origins, 'powers']);
+        return view('races', ['origins' => $origins]);
     }
 
     public function originsListAPI(Request $request)
@@ -20,19 +22,19 @@ class OriginController extends Controller
         $originID = $request->input('race_index');
 
         if (!$originID) {
-            return response()->json(['error' => 'race_index parameter is required'], 400);
+            return response()->json(['error' => 'Параметр race_index не определён'], 400);
         }
 
-        $origin = Origin::where('index', $originID)->first();
+        $origin = Origin::where('index', $originID)
+            ->with(['powers', 'evolutions.powers'])
+            ->first();
 
         if (!$origin) {
-            return response()->json(['error' => 'Origin not found'], 404);
+            return response()->json(['error' => 'Раса не найдена'], 404);
         }
 
         return response()->json([
-            'origin' => $origin,
-            'powers' => $origin->powers ? $origin->powers->toArray() : null,
-            'evolutions' => $origin->evolutions ? $origin->evolutions->toArray() : null
+            'origin' => $origin
         ]);
     }
 }
