@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('health')->default(20);
-            $table->string('food')->default('Всеядные');
-            $table->string('average')->nullable();
-            $table->string('adulting')->nullable();
+            $table->string('food')->nullable()->default('Всеядные');
+            $table->string('average')->nullable()->default('Как у людей');
+            $table->string('adulting')->nullable()->default('Как у людей');
             $table->string('parent')->nullable(); // nullable для внешнего ключа
         });
 

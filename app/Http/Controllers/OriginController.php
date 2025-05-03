@@ -10,9 +10,15 @@ class OriginController extends Controller
     public function originsList()
     {
         // Получаем только базовые расы (без эволюций) с нужными полями
-        $origins = Origin::whereNull('parent')
+        $originsRaw = Origin::whereNull('parent')
             ->select(['name', 'index'])
             ->get();
+
+        $origins = [];
+        foreach($originsRaw as $origin) {
+            $origins += [$origin->index => $origin->name];
+        }
+        asort($origins);
 
         return view('races', ['origins' => $origins]);
     }

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let raceSelectors = []
-    const originEvolutions = document.getElementById('originEvolutions');
+    const badges = window.location.origin + '/assets/img/badges/';
 
     // Функция обновления списка селекторов рас
     function refreshRS() {
@@ -57,10 +57,73 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('originDesc').innerHTML = originData.description;
 
         const originPowers = document.getElementById('originPowers');
+        // Определяем элемент для статблока
+        const originStats = document.getElementById('originStats');
+        originStats.innerHTML = '';
+
+        // 
+        // Заполняем блок статистики
+        // 
+        function addStat(statParam, statBadgeIMG, statIMGalt) {
+            // Создаём блок статистики
+            const statDiv = document.createElement('div');
+            statDiv.classList.add('col-sm', 'p-2', 'text-nowrap');
+            // Создаём элемент для вставки баджа
+            const statBadge = document.createElement('img');
+            statBadge.classList.add('link-icon')
+            statBadge.src = badges + statBadgeIMG + '.png';
+            statBadge.alt = statIMGalt;
+            // Создаём элемент для подписи
+            const statText = document.createElement('span')
+            statText.innerText = statParam;
+
+            // Добавляем данные в родительский элемент
+            statDiv.appendChild(statBadge);
+            statDiv.appendChild(statText);
+
+            // Добавляем блок статистики в основной список
+            originStats.appendChild(statDiv);
+        }
+        // Здоровье
+        if (originData.health) {
+            addStat(originData.health, 'regeneration', 'Изначальный максимум здоровья')
+        }
+        // Питание
+        if (originData.food) {
+            addStat(originData.food, 'hunger', 'Рацион питания')
+        }
+        // Средняя продолжительность жизни
+        if (originData.average) {
+            const badge = (originData.average == 'Не стареют') ? 'glowing' : 'clock_00';
+            const alt = (originData.average == 'Не стареют') ? 'Бессмертие' : 'Ожидаемая продолжительность жизни';
+            addStat(originData.average, badge, alt)
+        }
+        // Взросление
+        if (originData.adulting) {
+            let badge = '';
+            let alt = '';
+
+            switch (originData.adulting) {
+                case 'Проявляется во взрослом возрасте':
+                case 'Неприменимо':
+                    badge = 'light';
+                    alt = 'Нет детства или в детстве не проявляется';
+                    break;
+                default:
+                    badge = 'jump_boost';
+                    alt = 'Взросление';
+                    break;
+            }
+
+            addStat(originData.adulting, badge, alt);
+        }
 
         // Очищаем контейнер перед добавлением новых способностей
         originPowers.innerHTML = '';
 
+        // 
+        // Описываем способности
+        // 
         if (originData.powers) {
             originData.powers.forEach(power => {
                 // Создаём контейнер для способности
@@ -90,6 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // 
+        // Добавляем эволюции
+        // 
+        const originEvolutions = document.getElementById('originEvolutions');
+        const evolSpace = document.getElementById('originevolSpaceEvolutions');
         if (originData.evolutions) {
             originEvolutions.innerHTML = '';
 
@@ -103,9 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Добавляем контейнер в основной элемент
                 originEvolutions.appendChild(evolSelect)
             })
-
         }
 
+        // Возврат к родительскому блоку
         if (originData.parent) {
             const parent = originData.parent;
 
@@ -114,13 +182,22 @@ document.addEventListener('DOMContentLoaded', () => {
             // Создаём контейнер для эволюции
             const evolSelect = document.createElement('button');
             evolSelect.dataset.index = `${parent}`;
-            evolSelect.textContent = 'Назад';
+            evolSelect.textContent = 'К основной расе';
             evolSelect.className = 'me-2 mb-2 btn btn-outline-primary race-selector';
 
+            // Подписываем, что значит "эволюция"
+            const evolExplain = document.createElement('span')
+            evolExplain.innerHTML = '<br>Эта раса является эволюцией. Эволюции оставляют за собой все способности основной расы, если не сказано обратное.'
+            evolExplain.classList.add('text-secondary', 'fst-italic')
+
             // Добавляем контейнер в основной элемент
-            originEvolutions.appendChild(evolSelect)
+            originEvolutions.appendChild(evolSelect);
+            originEvolutions.appendChild(evolExplain);
         }
 
+        const hasEvolutions = originData.parent || originData.evolutions.length > 0;
+        originEvolutions.classList.toggle('d-none', !hasEvolutions)
+        evolSpace.classList.toggle('d-none', hasEvolutions)
         // Обновляем список селекторов
         refreshRS();
     }
