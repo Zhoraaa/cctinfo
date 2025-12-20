@@ -1,144 +1,52 @@
-<script>
-    function headerPadding() {
-        var pBottom = parseFloat(getComputedStyle(document.body).paddingBottom)
-
-        if (document.title.match(/Главная/) && document.body.clientWidth > 800) {
-            document.body.style.paddingTop = '0px'
-        } else if (document.title.match(/Главная/)) {
-            document.body.style.paddingTop = pBottom * 1.5 + 'px'
-        } else if (document.body.clientWidth > 800) {
-            document.body.style.paddingTop = pBottom / 2.5 + 'px'
-        } else {
-            document.body.style.paddingTop = pBottom * 1.6 + 'px'
-        }
-
-        // console.log(getComputedStyle(document.body).paddingTop)
-    }
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // Вставляем в шапку название страницы
-        document.getElementById("ht-text").innerHTML = document.title
-
-        headerPadding()
-    }) 
-    window.addEventListener('resize', () => {
-        headerPadding()
-    })
-</script>
-<div class="menu-toggler-wrapper">
-    <div class="logo-hover-interact" data-bs-toggle="offcanvas" href="#manualTOC" role="button" aria-controls="manualTOC">
-        <div class="layout-img-1">
-            <img src="{{ asset('assets/img/interact/icon_layout_1.png') }}" alt="" class="logo-img loading-animation-trigger-1">
-        </div>
-        <div class="layout-img-2">
-            <img src="{{ asset('assets/img/interact/icon_layout_2.png') }}" alt="" class="logo-img loading-animation-trigger-2">
-        </div>
-        <div class="layout-img-under">
-            <img src="{{ asset('assets/img/icon16.png') }}" alt="" class="logo-img loading-animation-trigger-3">
-        </div>
-    </div>
-    <div id="headerTitle">
-        <h5 id="ht-text">
-        </h5>
-    </div>
-</div>
-
-{{-- Всплывающий навигатор по справочнику --}}
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="manualTOC" aria-labelledby="manualTOC">
-    <div class="offcanvas-header align-items-start">
-        <div class="d-flex flex-column">
-            <h4 class="offcanvas-title" id="manualTOCtitle">CaCuTi</h4>
-            <span>Сборник анекдотов</span>
-        </div>
-        <button class="btn-close text-reset mt-1" data-bs-dismiss="offcanvas" aria-label="CLose"></button>
-    </div>
-    <div class="offcanvas-body">
-        {{-- Навигатор по справочнику --}}
-        <div class="section">
-            {{-- Оглавление справочника --}}
-            <div class="">
-                {{-- Главная --}}
-                <a href="{{ route('home') }}"
-                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <div class="link-with-icon fs-4 hover-border">
-                        <img class="link-icon" src="{{ asset('assets/img/badges/icon16.png') }}" alt=""
-                            class="border border-primary">
-                        <span>Главная</span>
-                    </div>
-                </a>
-                {{-- Проходка --}}
-                <a href="{{ route('prohodka') }}" target="_blank"
-                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <div class="link-with-icon fs-4 hover-border">
-                        <img class="link-icon" src="{{ asset('assets/img/badges/emerald.png') }}" alt=""
-                            class="border border-primary">
-                        <span>Попасть на сервер</span>
-                    </div>
-                </a>
-                {{-- Правила --}}
-                <a href="{{ route('rules') }}"
-                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <div class="link-with-icon fs-4 hover-border">
-                        <img class="link-icon" src="{{ asset('assets/img/badges/banner_pattern.png') }}" alt=""
-                            class="border border-primary">
-                        <span>Правила</span>
-                    </div>
-                </a>
-                {{-- Расы --}}
-                <a href="{{ route('races') }}"
-                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <div class="link-with-icon fs-4 hover-border">
-                        <img class="link-icon" src="{{ asset('assets/img/badges/orb_of_origin.png') }}" alt=""
-                            class="border border-primary">
-                        <span>Расы</span>
-                    </div>
-                </a>
-                {{-- Ресурспак --}}
-                {{-- <a href="{{ route('resourcepack') }}"
-                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <div class="link-with-icon fs-4 hover-border">
-                        <img class="link-icon" src="{{ asset('assets/img/badges/brush.png') }}" alt=""
-                            class="border border-primary">
-                        <span>Ресурспак</span>
-                    </div>
-                </a> --}}
-                {{-- Веб-карта --}}
-                {{-- <a href="{{ route('web-map') }}" target="_blank" --}}
-                {{-- class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> --}}
-                {{-- <div class="link-with-icon fs-4 hover-border"> --}}
-                {{-- <img class="link-icon" src="{{ asset('assets/img/badges/map.png') }}" alt="" --}}
-                {{-- class="border border-primary"> --}}
-                {{-- <span>Веб-карта</span> --}}
-                {{-- </div> --}}
-                {{-- </a> --}}
-                {{-- Достижения --}}
-                {{-- <a href="{{ route('advancements') }}"
-                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <div class="link-with-icon fs-4 hover-border">
-                        <img class="link-icon" src="{{ asset('assets/img/badges/nether_star.png') }}" alt=""
-                            class="border border-primary">
-                        <span>Достижения</span>
-                    </div>
-                </a> --}}
-                {{-- Рецепты --}}
-                {{-- <a href="{{ route('recipes') }}"
-                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <div class="link-with-icon fs-4 hover-border">
-                        <img class="link-icon" src="{{ asset('assets/img/badges/knowledge_book.png') }}" alt=""
-                            class="border border-primary">
-                        <span>Рецепты</span>
-                    </div>
-                </a> --}}
-                {{-- Лаунчер --}}
-                {{-- <a href="{{ route('download') }}"
-                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <div class="link-with-icon fs-4 hover-border">
-                        <img class="link-icon" src="{{ asset('assets/img/badges/icon16.png') }}" alt=""
-                            class="border border-primary">
-                        <span>Лаунчер</span>
-                    </div>
-                </a> --}}
+<div
+    class="bg-slate-800/20 fixed z-100 flex md:flex-row md:items-center flex-col items-start justify-between w-full left-1/2 -translate-x-1/2 backdrop-blur-xl md:m-1 md:rounded-lg">
+    <div class="md:w-fit w-full flex justify-between items-center duration-200">
+        <a href="{{ route('home') }}" class="flex items-center group">
+            <div id="menuBtn" data-dropdown-toggle="menu"
+                class="group-hover:-rotate-15 duration-200 group-hover:scale-110">
+                <div class="">
+                    <img src="{{ Vite::asset('resources/images/icon.png') }}" alt="" class="h-20 pix z-200">
+                </div>
+                <div
+                    class="blur-lg group-hover:blur-md group-hover:opacity-75 -translate-y-20 transition-all duration-150 ease-out h-0">
+                    <img src="{{ Vite::asset('resources/images/icon.png') }}" alt="" class="h-20">
+                </div>
             </div>
+            <div
+                class="invisible opacity-0 -translate-x-1 group-hover:visible group-hover:opacity-100 group-hover:translate-x-0 text-xl italic text-zinc-100/70 duration-100">
+                Главная
+            </div>
+        </a>
+        <div id="navbarBtn" class="p-4 md:hidden block font-bold text-2xl text-shadow-lg cursor-pointer duration-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd"
+                    d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                    clip-rule="evenodd" />
+            </svg>
         </div>
     </div>
+    <navbar id="navbar"
+        class="left-50vw px-1 gap-1 hidden md:flex flex-wrap items-start justify-center text-xl text-shadow-lg">
+        <a href="{{ route('download') }}"
+            class="block py-2 px-4 h-full rounded-sm border-2 border-transparent hover:bg-zinc-800/20 hover:border-zinc-800/30 hover:underline underline-offset-6 duration-150">Скачать</a>
+        <a href=""
+            class="block py-2 px-4 rounded-md transition-colors duration-200 cursor-not-allowed text-slate-200/40"
+            title="Скоро">Вики</a>
+        <a href=""
+            class="block py-2 px-4 h-full rounded-sm border-2 border-transparent hover:bg-zinc-800/20 hover:border-zinc-800/30 hover:underline underline-offset-6 duration-150">Правила</a>
+        <a href=""
+            class="block py-2 px-4 rounded-md transition-colors duration-200 cursor-not-allowed text-slate-200/40"
+            title="Скоро">Аккаунт</a>
+    </navbar>
+    <script>
+        const navbarBtn = document.getElementById('navbarBtn');
+        const navbar = document.getElementById('navbar');
+
+        navbarBtn.addEventListener('click', function() {
+            navbar.classList.toggle('hidden');
+            navbar.classList.toggle('py-2');
+            navbar.classList.toggle('w-full');
+            navbarBtn.classList.toggle('rotate-180');
+        })
+    </script>
 </div>
