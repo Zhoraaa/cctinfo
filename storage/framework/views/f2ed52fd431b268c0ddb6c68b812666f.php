@@ -1,15 +1,15 @@
 <div
     class="bg-zinc-800/30 fixed z-100 flex md:max-w-5/7 md:flex-row md:items-center flex-col items-start justify-between w-full left-1/2 -translate-x-1/2 backdrop-blur-xl md:m-1 md:rounded-lg">
     <div class="md:w-fit w-full flex justify-between items-center duration-200">
-        <a href="{{ route('home') }}" class="flex items-center group">
+        <a href="<?php echo e(route('home')); ?>" class="flex items-center group">
             <div id="menuBtn" data-dropdown-toggle="menu"
                 class="group-hover:-rotate-15 duration-200 group-hover:scale-110">
                 <div class="">
-                    <img src="{{ Vite::asset('resources/images/icon.png') }}" alt="" class="h-20 pix z-200">
+                    <img src="<?php echo e(Vite::asset('resources/images/icon.png')); ?>" alt="" class="h-20 pix z-200">
                 </div>
                 <div
                     class="blur-lg group-hover:blur-md group-hover:opacity-75 -translate-y-20 transition-all duration-150 ease-out h-0">
-                    <img src="{{ Vite::asset('resources/images/icon.png') }}" alt="" class="h-20">
+                    <img src="<?php echo e(Vite::asset('resources/images/icon.png')); ?>" alt="" class="h-20">
                 </div>
             </div>
             <div
@@ -27,7 +27,7 @@
     </div>
     <navbar id="navbar"
         class="left-50vw px-1 gap-1 hidden md:flex flex-wrap items-start justify-center text-xl text-shadow-lg">
-        <a href="{{ route('download') }}"
+        <a href="<?php echo e(route('download')); ?>"
             class="block py-2 px-4 h-full rounded-sm border-2 border-transparent hover:bg-zinc-800/20 hover:border-zinc-800/30 hover:underline underline-offset-6 duration-150">Скачать</a>
         <a href=""
             class="block py-2 px-4 rounded-md transition-colors duration-200 cursor-not-allowed text-slate-200/40"
@@ -50,3 +50,4 @@
         })
     </script>
 </div>
+<?php /**PATH /home/zh0raaa/Рабочий стол/cctinfo/resources/views/components/header.blade.php ENDPATH**/ ?>

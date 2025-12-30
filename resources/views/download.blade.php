@@ -9,15 +9,31 @@
         <div class="w-fit mx-auto my-2">
             <img src="{{ Vite::asset('resources/images/titles/minecraft_title_SM.png') }}" alt="" class="">
         </div>
-        <a class="mono border-2 py-2 px-4 rounded-md text-md font-bold">
-            .zip</a>
-        <a class="mono border-2 py-2 px-4 rounded-md text-md font-bold">
-            .mrpack</a>
+        <div class="flex w-fit gap-2 p-3 rounded-lg text-md font-bold text-black bg-amber-500">
+            <x-icons.download/>
+            <p class="">
+                .zip
+            </p>
+            <p>
+                825 МБ
+            </p>
+        </div>
+        <div class="flex w-fit gap-2 border-2 p-3 rounded-lg text-md font-bold">
+            <x-icons.download/>
+            <p class="">
+                .mrpack
+            </p>
+            <p>
+                18 МБ
+            </p>
+        </div>
         <p class="my-2 italic text-slate-200/60 text-sm">
             *.mrpack - легковесный формат сборки для лаунчеров семества Prism и MultiMC
         </p>
     </div>
-    <h1 class="sm:w-8/10 w-full sm:mx-auto px-2 my-3 text-3xl sm:text-4xl font-bold text-center">Поддерживаются:</h1>
+    <h1 class="sm:w-8/10 w-full sm:mx-auto px-2 my-3 text-3xl sm:text-4xl font-bold text-center">Основные моды:</h1>
+    <h1 class="sm:w-8/10 w-full sm:mx-auto px-2 my-3 text-3xl sm:text-4xl font-bold text-center">Преимущества сборки:</h1>
+    <h1 class="sm:w-8/10 w-full sm:mx-auto px-2 my-3 text-3xl sm:text-4xl font-bold text-center">Социальные моды:</h1>
     <div class="sm:w-8/10 w-full sm:mx-auto px-2 flex flex-wrap gap-2">
         <div class="w-full flex flex-col gap-2 p-2 rounded border-2 text-blue-400/50 bg-blue-400/10">
             <h3 class="mono text-lg font-bold text-blue-300">
@@ -30,10 +46,10 @@
             <div class="mb-1 flex flex-wrap gap-2 justify-end">
                 <a class="w-fit p-1 border-2 rounded border-green-400/50 text-green-400 bg-green-400/20"
                     href="https://modrinth.com/plugin/simple-voice-chat" target="_blank">
-                    Modrinth <x-link></x-link>
+                    Modrinth <x-icons.link />
                 </a>
                 <a class="w-fit p-1 border-2 rounded border-orange-400/50 text-orange-400 bg-orange-400/20" href="">
-                    CurseForge <x-link></x-link>
+                    CurseForge <x-icons.link />
                 </a>
             </div>
         </div>
@@ -53,10 +69,10 @@
             <div class="mb-1 flex flex-wrap gap-2 justify-end">
                 <a class="w-fit p-1 border-2 rounded border-green-400/50 text-green-400 bg-green-400/20"
                     href="https://modrinth.com/plugin/emotecraft" target="_blank">
-                    Modrinth <x-link></x-link>
+                    Modrinth <x-icons.link />
                 </a>
                 <a class="w-fit p-1 border-2 rounded border-orange-400/50 text-orange-400 bg-orange-400/20" href="">
-                    CurseForge <x-link></x-link>
+                    CurseForge <x-icons.link />
                 </a>
             </div>
         </div>
@@ -72,10 +88,10 @@
             <div class="mb-1 flex flex-wrap gap-2 justify-end">
                 <a class="w-fit p-1 border-2 rounded border-green-400/50 text-green-400 bg-green-400/20"
                     href="https://modrinth.com/plugin/custom-player-models" target="_blank">
-                    Modrinth <x-link></x-link>
+                    Modrinth <x-icons.link />
                 </a>
                 <a class="w-fit p-1 border-2 rounded border-orange-400/50 text-orange-400 bg-orange-400/20" href="">
-                    CurseForge <x-link></x-link>
+                    CurseForge <x-icons.link />
                 </a>
             </div>
         </div>
